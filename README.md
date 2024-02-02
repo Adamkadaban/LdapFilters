@@ -21,12 +21,17 @@ Return nested group membership of a user
 (member:1.2.840.113556.1.4.1941:=CN=John Smith,DC=lab,DC=local)
 ```
 
-Find all enabled user accounts:
+Find all enabled user accounts
 ```
 (&(objectCategory=person)(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
 ```
 
-Find all kerberoastable accounts:
+Find all kerberoastable accounts
 ```
-(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(objectCategory=computer)))"
+(&(objectClass=user)(servicePrincipalName=*)(!(cn=krbtgt))(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+```
+
+Find all asrep-roastable users
+```
+(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))
 ```
