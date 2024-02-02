@@ -28,6 +28,11 @@ Find all users that have never logged in
 (&(objectCategory=user)(lastlogon=0))
 ```
 
+Find all users that are almost locked out
+```
+(&(objectCategory=user)(badPwdCount>=4))
+```
+
 Find all kerberoastable accounts
 ```
 (&(objectClass=user)(servicePrincipalName=*)(!(cn=krbtgt))(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
