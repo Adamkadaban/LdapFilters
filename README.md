@@ -18,6 +18,15 @@ Find all enabled user accounts
 ```
 (&(objectCategory=person)(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
 ```
+Find all users that need to change their password on the next logon
+```
+(&(objectCategory=user)(pwdLastSet=0))
+```
+
+Find all users that have never logged in
+```
+(&(objectCategory=user)(lastlogon=0))
+```
 
 Find all kerberoastable accounts
 ```
