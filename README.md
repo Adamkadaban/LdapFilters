@@ -1,19 +1,12 @@
 # LdapFilters
 My notes on good LDAP filters for enumeration
 
-Return Domain Admins group
-```
-(&(objectclass=group)(cn=Domain Admins))"
-```
+
+### users
 
 Get properties of a user account
 ```
 (&(objectCategory=person)(objectClass=user)(SamAccountName=sa1))
-```
-
-Return members of the Administrators group
-```
-(memberOf:1.2.840.113556.1.4.1941:=CN=Administrators,CN=Builtin,DC=lab,DC=local)
 ```
 
 Return nested group membership of a user
@@ -34,4 +27,16 @@ Find all kerberoastable accounts
 Find all asrep-roastable users
 ```
 (&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))
+```
+
+### groups
+
+Return Domain Admins group
+```
+(&(objectclass=group)(cn=Domain Admins))"
+```
+
+Return members of the Administrators group
+```
+(memberOf:1.2.840.113556.1.4.1941:=CN=Administrators,CN=Builtin,DC=lab,DC=local)
 ```
