@@ -1,6 +1,8 @@
 # LdapFilters
 My notes on good LDAP filters for enumeration
 
+Good guide to writing queries: [An Introduction to Manual Active Directory Querying with Dsquery and Ldapsearch](https://posts.specterops.io/an-introduction-to-manual-active-directory-querying-with-dsquery-and-ldapsearch-84943c13d7eb)
+
 
 ### users
 
