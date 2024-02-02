@@ -25,3 +25,8 @@ Find all enabled user accounts:
 ```
 (&(objectCategory=person)(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
 ```
+
+Find all kerberoastable accounts:
+```
+(&(servicePrincipalName=*)(UserAccountControl:1.2.840.113556.1.4.803:=512)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(objectCategory=computer)))"
+```
