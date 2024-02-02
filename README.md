@@ -11,7 +11,7 @@ Get properties of a user account
 
 Return nested group membership of a user
 ```
-(&(objectClass=user)(member:1.2.840.113556.1.4.1941:=CN=John Smith,DC=lab,DC=local))
+(member:1.2.840.113556.1.4.1941:=CN=John Smith,DC=lab,DC=local)
 ```
 
 Find all enabled user accounts
