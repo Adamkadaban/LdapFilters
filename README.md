@@ -49,7 +49,7 @@ Find all asrep-roastable users
 
 Return Domain Admins group
 ```
-(&(objectclass=group)(cn=Domain Admins))"
+(&(objectclass=group)(cn=Domain Admins))
 ```
 
 Return members of the Administrators group
