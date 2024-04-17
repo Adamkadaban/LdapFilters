@@ -95,3 +95,12 @@ LDAP has identifiers (called [matching rules](https://learn.microsoft.com/en-us/
 | LDAP_MATCHING_RULE_BIT_OR          | 1.2.840.113556.1.4.804  | >= 2000    | Bitwise OR                                                                    |
 | LDAP_MATCHING_RULE_TRANSITIVE_EVAL | 1.2.840.113556.1.4.1941 | >= 2008    | Recursively search attributes (rather than only direct attributes)            |
 | LDAP_MATCHING_RULE_DN_WITH_DATA    | 1.2.840.113556.1.4.2253 | >= 2012    | Match on portions of values of syntax Object(DN-String) and Object(DN-Binary) |
+
+
+## Running a query
+
+While tools like [ldapsearch](https://docs.ldap.com/ldap-sdk/docs/tool-usages/ldapsearch.html) and [ldapsearch-ad](https://github.com/yaap7/ldapsearch-ad) are great, I find that [godap]() works incredibly well and has many useful features:
+
+```bash
+godap <LDAP server> -S -I -P 636 -u <username> --passfile <password file>
+```
